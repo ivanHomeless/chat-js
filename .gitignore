@@ -3,7 +3,7 @@ node_modules/
 .env
 
 # Parcel output
-dist/
+# dist/
 .cache/
 .parcel-cache
 
