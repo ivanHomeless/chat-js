@@ -1,0 +1,10 @@
+# .lintstagedrc.yml
+
+# Для файлов .ts, .tsx, .js — сначала запускаем eslint с автоисправлением, затем prettier
+'*.{ts,tsx,js}':
+  - 'eslint --cache --cache-location ./node_modules/.cache/.eslintcache --fix'
+  - 'prettier --loglevel warn --cache --write'
+
+# Для файлов .json, .yml, .scss — просто применяем prettier
+'*.{json,yml,scss}':
+  - 'prettier --loglevel warn --cache --write'
