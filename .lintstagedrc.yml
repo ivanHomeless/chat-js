@@ -6,6 +6,9 @@
   - 'prettier --loglevel warn --cache --write'
 
 # Для файлов .json, .yml, .scss — просто применяем prettier
-'*.{json,yml,scss}':
+'*.{json,yml}':
+  - 'prettier --loglevel warn --cache --write'
+
+'*.{scss}':
   - 'stylelint --fix'
   - 'prettier --loglevel warn --cache --write'
