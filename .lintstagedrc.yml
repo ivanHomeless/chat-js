@@ -7,4 +7,5 @@
 
 # Для файлов .json, .yml, .scss — просто применяем prettier
 '*.{json,yml,scss}':
+  - 'stylelint --fix'
   - 'prettier --loglevel warn --cache --write'
