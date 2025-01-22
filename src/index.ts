@@ -12,16 +12,17 @@ const obj = {
 console.log(get(obj, 'data.first', 'dev'))
  */
 
-import { range } from './utils/mydash/range'
+import { isEmpty } from './utils/mydash/is-empty'
 
-console.log(range(4)) // => [0, 1, 2, 3] 
-console.log(range(-4)) // => [0, -1, -2, -3]
-console.log(range(1, 5)) // => [1, 2, 3, 4]
-console.log(range(0, 20, 5)) // => [0, 5, 10, 15]
-console.log(range(0, -4, -1)) // => [0, -1, -2, -3]
-console.log(range(1, 4, 0)); // => [1, 1, 1]
-console.log(range(0)) // => []
-
+console.log(isEmpty(null)) // => true
+console.log(isEmpty(true)) // => true
+console.log(isEmpty(1)) // => true
+console.log(isEmpty([1,2,3])) // => false
+console.log(isEmpty({'a':1})) // => false
+console.log(isEmpty('123')) // => false
+console.log(isEmpty(123)) // => true
+console.log(isEmpty('')) // => true
+console.log(isEmpty(0)) // => truee
 
 
 

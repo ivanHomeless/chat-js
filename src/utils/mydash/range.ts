@@ -1,8 +1,13 @@
-export function range(start?: number, end?: number, step?: number): number[] {
+export function range(start?: number, end?: number, step?: number, isRight: boolean = false): number[] {
 	// Если передан только один аргумент, это значение `end`, начинаем с 0
 	if (end === undefined && start !== undefined) {
 	  end = start;
 	  start = 0;
+	}
+
+	let zeroStep = false
+	if (step === 0) {
+		zeroStep = true
 	}
   
 	// Значения по умолчанию
@@ -17,8 +22,13 @@ export function range(start?: number, end?: number, step?: number): number[] {
   
 	const result: number[] = [];
 	for (let i = start; step > 0 ? i < end : i > end; i += step) {
-	  result.push(i);
-	}
-  
-	return result;
+		if (zeroStep) {
+			result.push(start)
+			continue
+		}
+		result.push(i);
+	}	
+	
+	return isRight ? result.reverse() : result;	
+	
   }
